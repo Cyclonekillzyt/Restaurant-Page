@@ -2,7 +2,7 @@ import firstImage from "./images/first.jpg";
 
 export function element1() {
   const element = document.createElement("div");
-  element.classList.add("hero", "scroll-item");
+  element.classList.add("home");
 
   const section1 = document.createElement("div");
   const section2 = document.createElement("div");
@@ -18,6 +18,9 @@ export function element1() {
   const text = document.createElement("p");
   const addButton = document.createElement("button");
 
+  heroHeading.classList.add("foodName");
+  sectionName.classList.add("sectionName");
+  text.classList.add("text");
   sectionName.textContent = "Our Special Dishes";
   heroHeading.textContent = "Fried Chicken";
   text.textContent =
@@ -28,5 +31,5 @@ export function element1() {
   section2.appendChild(image);
   element.append(section1, section2);
 
-  return element; 
+  return element;
 }

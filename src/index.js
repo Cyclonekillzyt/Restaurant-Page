@@ -2,5 +2,9 @@ import { loadPage } from "./onLoad";
 import "./nav.css";
 import "./animation.css";
 import "./hero.css";
+import { nav } from "./nav.js";
 
-loadPage();
+document.addEventListener('DOMContentLoaded', () => {
+    loadPage();
+    nav();
+})

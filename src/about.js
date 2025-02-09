@@ -1,15 +1,15 @@
-import secondImage from "./images/second.jpg";
+import thirdImage from "./images/third.jpg";
 
-export function element2() {
+export function element3() {
   const element = document.createElement("div");
-  element.classList.add("second", "scroll-item");
+  element.classList.add("about");
 
   const section1 = document.createElement("div");
   const section2 = document.createElement("div");
   const image = document.createElement("img");
 
   image.classList.add("image");
-  image.src = secondImage;
+  image.src = thirdImage;
   section1.classList.add("heroText");
   section2.classList.add("heroPicture");
 
