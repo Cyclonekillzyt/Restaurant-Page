@@ -6,36 +6,28 @@ export function nav() {
   const homeSection = document.querySelector(".home");
   const menuSection = document.querySelector(".menu");
   const aboutSection = document.querySelector(".about");
+  const ctaSection = document.querySelector(".cta");
 
   function initLoad (item){
-    item.style.visibility = "hidden";
-    item.style.opacity = "0";
-    item.style.position = "absolute";
-    item.style.pointerEvents = "none";
-    item.style.zIndex = "0";
-    item.style.transition = "opacity 0.5s ease-in-out";
+    item.style.display = "none";
   }
 
   function showSection(section) {
-    [homeSection, menuSection, aboutSection].forEach(sec => {
+    [homeSection, menuSection, aboutSection, ctaSection].forEach(sec => {
       initLoad(sec)
     });
 
-    section.style.visibility = "visible";
-    section.style.opacity = "1";
-    section.style.position = "relative";
-    section.style.pointerEvents = "auto";
-    section.style.zIndex = "1";
+    section.style.display = "flex";
 
     setTimeout(() => {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      section.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }, 100);
   }
 
   homeBtn.addEventListener("click", () => showSection(homeSection));
   menuBtn.addEventListener("click", () => showSection(menuSection));
   aboutBtn.addEventListener("click", () => showSection(aboutSection));
-  ctaBtn.addEventListener("click", () => showSection(homeSection));
+  ctaBtn.addEventListener("click", () => showSection(ctaSection));
 
   return {initLoad}
 }
